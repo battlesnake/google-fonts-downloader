@@ -26,7 +26,7 @@ while (<>) {
 	}
 	elsif (/^\}$/) {
 		print "$face\t$style\t$weight\t$name1\t$name2\t$format\t$url\n";
-		my $path = "$face";
+		my $path = lc("$face");
 		my $fname = "$path/$style-$weight.$format";
 		mkdir("$path");
 		my $status = getstore($url, $fname);
