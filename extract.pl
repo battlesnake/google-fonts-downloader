@@ -26,11 +26,15 @@ while (<>) {
 	}
 	elsif (/^\}$/) {
 		print "$face\t$style\t$weight\t$name1\t$name2\t$format\t$url\n";
-		my $path = "$face", $fname = "$path/$style-$weight.$format";
+		my $path = "$face";
+		my $fname = "$path/$style-$weight.$format";
 		mkdir("$path");
 		my $status = getstore($url, $fname);
 		if (is_error($status)) {
 			print STDERR "Failed to download $url to $fname\n";
 		}
+#		else {
+#			print STDERR "Downloaded $url to $fname\n";
+#		}
 	}
 }
