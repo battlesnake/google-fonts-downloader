@@ -1,0 +1,14 @@
+Google Fonts downloader script
+
+Usage:
+	curl "Google Fonts stylesheet" | ./extract.pl > fonts.txt
+
+The stylesheet is the URL from the "<link href='url' ...>" or "@import url(url)" code given by the Google Fonts service.
+
+The fonts.txt file (or STDOUT if none specified) is replaced by a tab-separated table of all data read from the stylesheet.
+
+The fonts are saved to "./{FACE}/{STYLE-WEIGHT.FORMAT}"
+eg: "./Roboto/normal-900.woff"
+
+Examples of both the input and output files are given in extract-eg.css and extract-eg.txt respectively
+
